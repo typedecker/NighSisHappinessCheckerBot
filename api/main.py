@@ -4,6 +4,7 @@ Created on Mon Dec 12 17:58:08 2022
 
 @author: DELL
 """
+from http.server import BaseHTTPRequestHandler
 
 import nest_asyncio
 nest_asyncio.apply()
@@ -58,5 +59,11 @@ async def on_message(message):
         traceback.print_exc()
     return
 
+class handler(BaseHTTPRequestHandler):
 
-client.run(os.environ['BOT_TOKEN'])
+  def do_GET(self):
+    self.send_response(200)
+    self.send_header('Content-type', 'text/plain')
+    self.end_headers()
+    client.run(os.environ['BOT_TOKEN'])
+    return
