@@ -58,5 +58,5 @@ async def on_message(message):
         traceback.print_exc()
     return
 
-# MTA1MjE5MTQ4ODU4ODY1MjYwNw.GTPhwg.Z8FEZmI0cboSX-gL__SVnrhytuRLnCFfH9523A
-client.run('')
+
+client.run(os.environ['BOT_TOKEN'])
